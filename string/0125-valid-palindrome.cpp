@@ -4,7 +4,7 @@ public:
       int n= s.size();
     int left=0, right=n-1;
 
-        while(left<right){
+    while(left<right){
 
             while(left<right && !isalnum(s[left])){
                 left++;
