@@ -10,7 +10,7 @@ class Solution{
         int n = numbers.size();
 
        
-        int left=0 , right = n-1;
+    int left=0 , right = n-1;
 
         while(left<right){
             int sum =numbers[left]+numbers[right];
