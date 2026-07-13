@@ -2,10 +2,10 @@ class Solution{
 
     public:
 
-    int maxArea(vector<int>& h){
+   int maxArea(vector<int>& h){
 
 
-        int n = h.size();
+     int n = h.size();
 
         int left =0 , right = n-1;
 
