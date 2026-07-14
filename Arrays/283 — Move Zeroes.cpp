@@ -1,6 +1,3 @@
-#include<stdio.h>
-using namespace std;
-
 class Solution{
 
     public:
@@ -21,13 +18,14 @@ class Solution{
                  slow++;
 
             }
+        }
 
-            for(int j=slow ; j<=n-1; j++){
+            for(int j=slow ; j<n-1; j++){
                  nums[j] = 0;
             }
 
         
-         }
+         
     }
 
 
