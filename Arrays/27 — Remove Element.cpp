@@ -1,5 +1,4 @@
-#include<stdio.h>
-using namespace std;
+
 
 class Solution{
 
@@ -30,4 +29,4 @@ class Solution{
     }
 
 
-}
+};
