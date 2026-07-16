@@ -9,7 +9,7 @@ class solution{
       
 
         sort(nums.begin(),nums.end());
-
+ 
         for(int i=0; i<n; i++){
 
             if(i>0 && nums[i]==nums[i-1]){
@@ -27,7 +27,7 @@ class solution{
             
 
             if (sum<0){
-                left++
+                left++;
             }else if(sum>0){
                 right--;
 
@@ -49,7 +49,7 @@ class solution{
                 }
             }
 
-        }
+        }k/
 
 
 
