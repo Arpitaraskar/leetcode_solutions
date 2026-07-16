@@ -30,3 +30,22 @@ class Solution{
 
 
 };
+
+class solution{
+
+    public:
+
+    int even(vector<int>&nums){
+        int slow=0
+
+        for(int i=0; i<nums.size(); i++){
+
+            if(nums[i]%2==0){
+                nums[slow]=nums[i]
+                slow++;
+            }
+        }
+
+        return slow;
+    }
+};
