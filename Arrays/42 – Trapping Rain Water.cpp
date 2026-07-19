@@ -5,7 +5,7 @@ class Solution{
 
     public:
 
-    int Trap(vector<int>&nums){
+int Trap(vector<int>&nums){
 
         int n=nums.size();
 
