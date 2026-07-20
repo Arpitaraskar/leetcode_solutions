@@ -1,38 +1,34 @@
-#include<stdio.h>
-using namespace std;
+class Solution {
+public:
+    int trap(vector<int>& nums) {
 
-class Solution{
+        int n = nums.size();
 
-    public:
+        int left = 0;
+        int right = n - 1;
 
-int Trap(vector<int>&nums){
+        int leftMax = 0;
+        int rightMax = 0;
 
-        int n=nums.size();
-        int ans=0;
+        int ans = 0;
 
-        for(int i=0; i<n ; i++){
-            int leftmax = 0;
-              int rightmax=0;
+        while (left <= right) {
 
-            for(int j =0; j<i; j++){
+            if (nums[left] < nums[right]) {
 
-                leftmax = max(leftmax, nums[j]);
+                leftMax = max(leftMax, nums[left]);
+                ans += leftMax - nums[left];
+                left++;
+
+            } else {
+
+                rightMax = max(rightMax, nums[right]);
+                ans += rightMax - nums[right];
+                right--;
+
             }
-
-            for(int j =i; j <n; j++){
-              
-
-                rightmax = max(rightmax,nums[j]);
-
-
-            }
-
-            ans += min(leftmax , rightmax)-nums[i];
         }
 
         return ans;
-
-       
-
-}
-}; 
+    }
+};
