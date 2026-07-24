@@ -17,11 +17,11 @@ public:
 
          prefixsum += nums[i];
 
-         int k = prefixsum - target;
+         int need = prefixsum - target;
 
-         if (mp.find(k) != mp.end())
+         if (mp.find(need) != mp.end())
          {
-            count += mp[k];
+            count += mp[need];
          }
 
          mp[prefixsum]++;
