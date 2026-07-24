@@ -1,30 +1,32 @@
-class Solution{
+class Solution
+{
 
-    public:
-    
-    int subarray(vector<int>&nums){
-      unordered_map<int,int>mp;
-        int n = nums.size();
-        int target = 2;
-       int prefixsum =0;
-       
-        mp[0] = 1;
-        int count =0;
-        
-        for ( int i =0 ; i<n; i++){
+public:
+   int subarray(vector<int> &nums)
+   {
+      unordered_map<int, int> mp;
+      int n = nums.size();
+      int target = 2;
+      int prefixsum = 0;
 
-    prefixsum +=nums[i];
+      mp[0] = 1;
+      int count = 0;
 
-       int k = prefixsum  - target;
+      for (int i = 0; i < n; i++)
+      {
 
-       if(mp.find(k)!= mp.end()){
-       count += mp[k];
-       }
+         prefixsum += nums[i];
 
-          mp[prefixsum]++;  
+         int k = prefixsum - target;
 
-    }
+         if (mp.find(k) != mp.end())
+         {
+            count += mp[k];
+         }
 
-    return count;
-}
+         mp[prefixsum]++;
+      }
+
+      return count;
+   }
 };
