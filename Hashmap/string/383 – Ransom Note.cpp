@@ -16,17 +16,14 @@ class Solution{
 
             mp[ransomNote[i]]--;
 
-        }
-
-        
-        
-        for(auto x :mp){
-
-            if(x.second < 0){
+            if(mp[ransomNote[i]] < 0){
                 return false;
             }
 
         }
-      return true;
+        return true;
+
+        
+        
     }
-}
+};
