@@ -1,36 +1,39 @@
-class Solution{
+class Solution {
+public:
+    bool isIsomorphic(string s, string t) {
 
-    public:
-
-    bool isomorphic(string s, string t){
-
-        unordered_map<char, char> mp1;
-        unordered_map<char,char> mp2;
-
-         if(s.length()!= t.length()){
+        if (s.length() != t.length()) {
             return false;
         }
 
+        unordered_map<char, char> mp1; // s -> t
+        unordered_map<char, char> mp2; // t -> s
 
-        for(int i =0; i<s.length(); i++){
-            
-        if(mp.find(s[i]) != mp.end()){
-       
-        if(mp[s[i]] != t[i]){
+        for (int i = 0; i < s.length(); i++) {
 
-            return false;
+            // Check s -> t mapping
+            if (mp1.find(s[i]) != mp1.end()) {
 
+                if (mp1[s[i]] != t[i]) {
+                    return false;
+                }
+
+            } else {
+                mp1[s[i]] = t[i];
+            }
+
+            // Check t -> s mapping
+            if (mp2.find(t[i]) != mp2.end()) {
+
+                if (mp2[t[i]] != s[i]) {
+                    return false;
+                }
+
+            } else {
+                mp2[t[i]] = s[i];
+            }
         }
 
-       }else{
-              mp[s[i]] = t[i];
-        }
-
-
-        }
-return true;
-
-       
-        
+        return true;
     }
 };
