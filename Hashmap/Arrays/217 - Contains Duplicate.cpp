@@ -1,7 +1,7 @@
 
 class Solution{
 
-    public:
+public:
 
 bool containsDuplicate(vector<int>& nums) {
 
