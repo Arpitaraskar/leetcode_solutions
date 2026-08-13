@@ -1,67 +1,29 @@
-//bruth-force
-// class Solution {
-// public:
-//     int findMaxLength(vector<int>& nums) {
-
-//         int n = nums.size();
-
-//         for(int i=0; i<n ; i++){
-
-//             int zerocount =0;
-//             int onecount =0;
-//             int ans=0;
-
-//             for(int j=i ; j<n; j++){
-
-//                 if(nums[j]==0){
-//                     zerocount++;
-//                 }else {
-//                     onecount++;
-//                 }
-//                  if(zerocount == onecount){
-//                     int length = j-i +1;
-
-//                     ans=(ans,length);
-
-//                  }
-//             }
-           
-//         }
-//          return ans;
-
-//     }
-
-// };
-
 class Solution {
 public:
     int findMaxLength(vector<int>& nums) {
+        int n = nums.size();
+        int answer = 0;
 
-        unordered_map<int, int> mp;
+        for (int i = 0; i < n; i++) {
 
-        mp[0] = -1;
+            int zeroCount = 0;
+            int oneCount = 0;
 
-        int sum = 0;
-        int ans = 0;
+            for (int j = i; j < n; j++) {
 
-        for (int i = 0; i < nums.size(); i++) {
+                if (nums[j] == 0) {
+                    zeroCount++;
+                } else {
+                    oneCount++;
+                }
 
-            if (nums[i] == 0)
-                sum += -1;
-            else
-                sum += 1;
-
-            if (mp.find(sum) != mp.end()) {
-
-                ans = max(ans, i - mp[sum]);
-
-            } else {
-
-                mp[sum] = i;
-
+                if (zeroCount == oneCount) {
+                    int length = j - i + 1;
+                    answer = max(answer, length);
+                }
             }
         }
 
-        return ans;
+        return answer;
     }
 };

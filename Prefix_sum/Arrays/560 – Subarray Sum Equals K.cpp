@@ -24,7 +24,7 @@ int subarray(vector<int>&nums,int target){
       mp[prefix_sum]++;
    }
    
-   
+   return count;
 }
 
 
