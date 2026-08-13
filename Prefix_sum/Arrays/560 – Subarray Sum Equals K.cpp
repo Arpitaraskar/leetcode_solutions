@@ -2,31 +2,31 @@ class Solution
 {
 
 public:
-   int subarray(vector<int> &nums)
-   {
-      unordered_map<int, int> mp;
-      int n = nums.size();
-      int target = 2;
-      int prefixsum = 0;
 
-      mp[0] = 1;
-      int count = 0;
+int subarray(vector<int>&nums,int target){
 
-      for (int i = 0; i < n; i++)
-      {
+   int prefix_sum =0;
+   int count =0;
 
-         prefixsum += nums[i];
+   unordered_map<int,int>mp;
 
-         int need = prefixsum - target;
+    mp[0] =1;
 
-         if (mp.find(need) != mp.end())
-         {
-            count += mp[need];
-         }
+   for(int i=0; i<nums.size(); i++){
+      prefix_sum += nums[i];
 
-         mp[prefixsum]++;
+      int need = prefix_sum - target;
+
+      if(mp.find(need)!= mp.end()){
+         count+=mp[need];
       }
 
-      return count;
+      mp[prefix_sum]++;
    }
+   
+   
+}
+
+
+
 };
