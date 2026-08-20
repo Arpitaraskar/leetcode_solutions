@@ -15,8 +15,6 @@ int subarray(vector<int>&nums,int target){
    for(int i=0; i<nums.size(); i++){
       prefix_sum += nums[i];
 
-      int need = prefix_sum - target;
-
       if(mp.find(need)!= mp.end()){
          count+=mp[need];
       }
@@ -30,3 +28,4 @@ int subarray(vector<int>&nums,int target){
 
 
 };
+
