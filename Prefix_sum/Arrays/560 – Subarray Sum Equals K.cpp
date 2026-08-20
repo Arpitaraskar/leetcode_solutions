@@ -24,8 +24,6 @@ int subarray(vector<int>&nums,int target){
    
    return count;
 }
-
-
-
 };
+
 

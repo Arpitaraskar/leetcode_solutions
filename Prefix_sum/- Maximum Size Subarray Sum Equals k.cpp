@@ -1,37 +1,33 @@
-// Q. Find The longest continuous part of the array whose sum is exactly k.
+class Solution {
+public:
 
-class Solution{
+    int MaximumSizeSubArraySum(vector<int>& nums, int k) {
 
-    public:
+        unordered_map<int, int> mp;
 
-    int MaximumSizeSubArraySum(vector<int>&nums,int k){
+        int ans = 0;
+        int sum = 0;
 
-        unordered_map<int,int>mp;
+        mp[0] = -1;
 
-        int ans=0;
-          int sum=0;
-          mp[0]=1;
-          int count =0
+        for (int i = 0; i < nums.size(); i++) {
 
-        for(int i=0; i<nums.size(); i++){
+            sum += nums[i];
 
-          sum+=nums[i];
             int need = sum - k;
 
-          if(mp.find(sum)!=mp.end()){
+            if (mp.find(need) != mp.end()) {
 
-        int length = currentIndex - previousIndex
+                int length = i - mp[need];
 
-
-
-          }
-
-                
+                ans = max(ans, length);
             }
 
+            if (mp.find(sum) == mp.end()) {
+                mp[sum] = i;
+            }
+        }
 
-        
         return ans;
-
     }
 };
