@@ -28,7 +28,7 @@ public:
 
             } else {
 
-                // Store ONLY the first/earliest index
+                // Store ONLY the earliest index
                 mp[sum] = i;
             }
         }
