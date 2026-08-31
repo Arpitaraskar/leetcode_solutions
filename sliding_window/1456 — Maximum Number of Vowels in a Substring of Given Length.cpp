@@ -23,7 +23,7 @@ public:
             if (s[i - k] == 'a' || s[i - k] == 'e' || s[i - k] == 'i' ||
                 s[i - k] == 'o' || s[i - k] == 'u') {
                 count--;
-            }
+            } 
 
               // Add character entering
             if (s[i] == 'a' || s[i] == 'e' || s[i] == 'i' ||
