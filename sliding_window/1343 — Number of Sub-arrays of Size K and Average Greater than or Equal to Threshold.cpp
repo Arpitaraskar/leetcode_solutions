@@ -1,31 +1,28 @@
 class Solution{
-
     public :
-      
-     int numOfSubarrays(vector<int>& arr, int k, int threshold) {
+    int numOfSubarrays(vector<int>& arr, int k, int threshold) {
+        int sum = 0;
+        int count = 0;
 
-        int sum =0;
-        int count =0;
-
-        for(int i =0; i<arr.size(); i++){
+        // Calculate sum of FIRST k elements
+        for(int i = 0; i < k; i++){
             sum += arr[i];
         }
 
-        if(sum /k >= threshold){
-           count++;
+        // Check first window
+        if(sum / k >= threshold){
+            count++;
         }
 
-        for(int right =k; right<arr.size(); right++){
-              sum = sum - arr[right - k] + arr[right];
+        // Slide the window
+        for(int right = k; right < arr.size(); right++){
+            sum = sum - arr[right - k] + arr[right];
 
-            if (sum / k >= threshold) {
-             count++;
+            if(sum / k >= threshold){
+                count++;
+            }
         }
-        
+
+        return count;
     }
-
-    return ans;
-
-}
-
 };
