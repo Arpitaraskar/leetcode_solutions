@@ -6,13 +6,18 @@ public:
 
         int count=0;
 
+          // insert every jewel into the set
+
        for(char x :jewels ){
 
         jewelset.insert(x);
 
        }
 
+          // Check every stone
        for(char x : stones){
+
+        // If the stone is a jewel
 
         if(jewelset.count(x)){
 
