@@ -34,7 +34,7 @@ class Solution{
             q.push(right);
         }
 
-        //remove neg element the left side
+        //remove negative element the left side
 
         while(!q.empty() && q.front()<= right-k){
             q.pop();
