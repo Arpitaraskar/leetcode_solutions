@@ -4,37 +4,39 @@ class Solution{
 
     public:
 
-    int Subarray(vector<int>&nums, int k){
+    int  countGoodSubstrings(string s){
 
-        int sum =0;
-      
-        int ans=0;
+        int count=0;
+
+        int x=s[0];
+        int y=s[1];
+        int z=s[2];
+
+ if(x != y && y!=z && z!=x){
+                count++;
+            }
+
+
+  for(int i=3 ; i<s.size(); i++){
+
+
+            x = y;       // old second becomes first
+            y = z;       // old third becomes second
+            z = s[i];    // new character enters
+
+            
+          if(x != y && y!=z && z!=x){
+                count++;
+            }
+
+            }
+
+            return count;
+
         
-        for(int i=0; i<k; i++){
-       sum = nums[i] + nums[i + k - 1];
-
-      
-
-         
- }
-
- int maxsum=sum;
-
-  for(int right =k; right<nums.size(); right++){
-
-   sum = nums[right] + nums[right + k - 1];
-
- 
-
-     ans = max(maxsum,sum);
-
-
-
-        }
-
-        return ans;
-         
-  
-
     }
+
+       
+
 };
+

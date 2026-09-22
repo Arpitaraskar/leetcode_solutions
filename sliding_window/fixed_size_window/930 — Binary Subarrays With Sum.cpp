@@ -1,11 +1,4 @@
-class Solution {
-public:
-
-    int maxsum(vector<int>&nums,int k){
-
-        int sum=0;
-
-        class Solution {
+ class Solution {
 public:
 
     int maxsum(vector<int>&nums,int k){
@@ -23,6 +16,7 @@ public:
 
             sum = sum- nums[right]+1;
         }
-
     }
-};
+
+    };
+
