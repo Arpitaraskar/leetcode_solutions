@@ -1,42 +1,34 @@
-
-
 class Solution{
 
     public:
 
-    int  countGoodSubstrings(string s){
+    int subarray(vector<int>nums){
 
-        int count=0;
-
-        int x=s[0];
-        int y=s[1];
-        int z=s[2];
-
- if(x != y && y!=z && z!=x){
-                count++;
-            }
-
-
-  for(int i=3 ; i<s.size(); i++){
-
-
-            x = y;       // old second becomes first
-            y = z;       // old third becomes second
-            z = s[i];    // new character enters
-
-            
-          if(x != y && y!=z && z!=x){
-                count++;
-            }
-
-            }
-
-            return count;
-
-        
-    }
-
+        int left=0 ;
+        int sum=0;
+        int ans =0;
        
+ for(int right =0; right<nums.size(); right++){
+            sum+= nums[right];
+
+            while(sum >= 5){
+
+          sum-=nums[left];
+
+             left++;
+
+            }
+
+            int length = right - left + 1;
+            ans = max(ans, length);
+
+
+        }
+     
+        return ans;
+
+    }
+    
 
 };
 
