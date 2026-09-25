@@ -34,3 +34,5 @@ class Solution{
 
 
 };
+
+https://leetcode.com/discuss/post/7344963/10-sliding-window-patterns-for-coding-in-pokf/

@@ -6,29 +6,27 @@ class Solution{
 
         int left=0 ;
         int sum=0;
-        int ans =0;
+        int ans =INT_MAX;
        
  for(int right =0; right<nums.size(); right++){
-            sum+= nums[right];
 
-            while(sum >= 5){
-
-          sum-=nums[left];
-
-             left++;
-
-            }
-
-            int length = right - left + 1;
-            ans = max(ans, length);
+    sum+=nums[right];
 
 
-        }
-     
-        return ans;
+    while(sum >= 7){
 
+       sum-=nums[left];
+
+    int  length = right - left + 1;
+
+      left++;
+
+      ans = min(ans,length);
     }
+
     
+ }
+ return ans;
 
+}
 };
-
