@@ -1,38 +1,37 @@
 class Solution {
 public:
-    int characterReplacement(string s, int k) {
+    int numOfSubarrays(vector<int>&nums, int k,int threshold) {
 
-        unordered_map<char,int>mp;
-        int maxFreq=0;
-        int left =0;
-        int ans =0;
+    int avg;
+    int sum =0;
+    int count=0;
+   
 
+   for(int i=0; i<k; i++){
 
-        for(int right =0; right<s.size(); right++){
+    sum+=nums[i];
 
-            mp[s[right]]++;
-
-        maxFreq=max(maxFreq,mp[s[right]]);
-
-
-        int length = right -left +1;
-
-        int replacement = length - maxFreq;
-
-        while(replacement > k){
-
-            mp[s[left]]--;
-            left++;
-
-            length = right-left+1;
-            replacement=length-maxFreq;
-        }
-
-        ans = max(ans,length);
+   }
 
 
-        }
-  return ans;
+   for(int right =k ; right <nums.size(); right++){
+
+    sum= sum-nums[right -k]+nums[right];
+
+
+    avg = sum /k;
+
+    if(avg >=threshold){
+
+        count++;
+
+    }
+
+ 
+
+}
+
+return count;
 
 
         
