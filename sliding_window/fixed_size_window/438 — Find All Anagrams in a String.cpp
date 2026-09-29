@@ -26,6 +26,8 @@ class Solution{
                 
             if(mp1 == mp2){
 
+                //starting position
+
            ans.push_back(s[left]);
 
             }
