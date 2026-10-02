@@ -1,39 +1,52 @@
+```cpp
 class Solution {
 public:
-    int numOfSubarrays(vector<int>&nums, int k,int threshold) {
+    int longestSubarray(vector<int>& nums, int limit) {
 
-    int avg;
-    int sum =0;
-    int count=0;
-   
+        deque<int> maxDeque;
+        deque<int> minDeque;
 
-   for(int i=0; i<k; i++){
+        int left = 0;
+        int ans = 0;
 
-    sum+=nums[i];
+        for(int right = 0; right < nums.size(); right++) {
 
-   }
+         
+            while(!maxDeque.empty() &&
+                  nums[maxDeque.back()] < nums[right]) {
+                maxDeque.pop_back();
+            }
 
+            maxDeque.push_back(right);
 
-   for(int right =k ; right <nums.size(); right++){
+           
+            while(!minDeque.empty() &&
+                  nums[minDeque.back()] > nums[right]) {
+                minDeque.pop_back();
+            }
 
-    sum= sum-nums[right -k]+nums[right];
-
-
-    avg = sum /k;
-
-    if(avg >=threshold){
-
-        count++;
-
-    }
-
- 
-
-}
-
-return count;
-
+            minDeque.push_back(right);
 
         
+            while(nums[maxDeque.front()] - nums[minDeque.front()] > limit) {
+
+                if(maxDeque.front() == left) {
+                    maxDeque.pop_front();
+                }
+
+                if(minDeque.front() == left) {
+                    minDeque.pop_front();
+                }
+
+                left++;
+            }
+
+          
+            int length = right - left + 1;
+
+            ans = max(ans, length);
+        }
+
+        return ans;
     }
 };
