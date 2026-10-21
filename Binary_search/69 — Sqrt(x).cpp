@@ -4,7 +4,16 @@ class Solution{
 
     int mySqrt(int x){
 
-        f
+        for(int i=1; i<x.size(); i++){
+
+            int square = x * x;
+
+            if(x >= square){
+                
+            }
+        }
+
+    
 
     }
 
