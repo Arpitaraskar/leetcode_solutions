@@ -1,16 +1,9 @@
-#include <iostream>
-#include <string>
-using namespace std;
+class Solution {
+public:
+   int findMax(int arr[], int i, int n){
 
-int sumArray(int arr[],int i,int n){
-    if(i == n){
-        return 0;
+    if(i==n){
+      
     }
-
-   return arr[i]+ sumArray(arr,i+1,n);
-}
-
-int main() {
-  int arr[]={3,5,6};
-  cout<<sumArray(arr,0,3);
-}
+   }
+};
